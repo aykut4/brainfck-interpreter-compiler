@@ -1,6 +1,6 @@
 ## Build
 
-The following will compile all code, run tests and if all is good, create a fat-jar with all dependencies inside `target/scala-2.13`.
+The following will compile all the code, run the tests and if all are good, create a fat-jar with all the dependencies inside `target/scala-2.13`.
 
 ```
 sbt assembly
@@ -8,12 +8,12 @@ sbt assembly
 # Description
 ```
 The project was developed on Debian GNU/Linux 9
-Necessary technology stack:
+Technology stack:
     - Linux OS
     - sbt
     - scalatest
-    - as (GNU Assembler) (in order to assemble the produced assembly source code to an object file)
-    - ld (GNU Linker) (in order to link the produced object file to create elf executable)
+    - as (GNU Assembler)
+    - ld (GNU Linker)
     - see below for the correct usage of as and ld
 
 
@@ -22,10 +22,10 @@ Can be avoided or can be used standalone for performance insight
 ```
 ## Use
 
-Once it has been built and the jar file exists, you can use the `bf` and `bfc` commands:
+Once it's built and the jar file exists, you can use the `bf` and `bfc` commands:
 ```
 Usage: ./bf [-m SIZE] [-n] <input>
-! the order of the options matters
+! the order of the options matter
 
 ./bf examples/hello.bf
 ./bf -m 65536 examples/hello.bf
@@ -35,8 +35,8 @@ Usage: ./bf [-m SIZE] [-n] <input>
 or
 ```
 Usage: ./bfc [-O 0] <outputfile> <input>
-! the order of the options matters
-! for the full optimization omit -O option
+! the order of the options matter
+! for the full optimization omit the -O option
 
 ./bfc examples/hello.bf
 ./bfc -O 0 examples/hello.bf
@@ -45,7 +45,7 @@ Usage: ./bfc [-O 0] <outputfile> <input>
 
 ## Compiled Assembly
 
-Once the assembly source code is produced by the compiler, you need following commands:
+Once the assembly source code is produced by the compiler, you need the following commands:
 ```
 as --32 <filename.s> -o <output.o>
 ld -m elf_i386 -e main -s <output.o>
